@@ -356,7 +356,7 @@ function PhilosophyView({ onScrollToProduct }: { onScrollToProduct: () => void }
               className="text-[10px] tracking-widest transition-colors hover:text-gm-text-muted/60"
               style={{ color: `${BM}66` }}
             >
-              事業へ ↑
+              事業へ ↓
             </button>
           )}
         </div>
@@ -428,7 +428,7 @@ function ProductView({ onScrollToPhilosophy }: { onScrollToPhilosophy: () => voi
             viewBox="0 0 12 12"
             fill="none"
             className="text-gm-text-muted/20"
-            animate={{ y: [0, 3, 0] }}
+            animate={{ y: [0, -3, 0] }}
             transition={{
               duration: 1.8,
               repeat: Infinity,
@@ -436,7 +436,7 @@ function ProductView({ onScrollToPhilosophy }: { onScrollToPhilosophy: () => voi
             }}
           >
             <path
-              d="M2 4L6 8L10 4"
+              d="M2 8L6 4L10 8"
               stroke="currentColor"
               strokeWidth="1"
               strokeLinecap="round"
@@ -491,14 +491,14 @@ export function BookMindLP() {
       ref={containerRef}
       className="hide-scrollbar h-[100dvh] w-screen snap-y snap-mandatory overflow-y-scroll bg-gm-bg"
     >
-      {/* 上層: 事業（開発中） */}
+      {/* 上層: 理念（横スクロール） */}
       <section className="relative h-[100dvh] snap-start snap-always">
-        <ProductView onScrollToPhilosophy={scrollToProduct} />
+        <PhilosophyView onScrollToProduct={scrollToProduct} />
       </section>
 
-      {/* 下層: 理念（横スクロール） */}
+      {/* 下層: 事業（開発中） */}
       <section className="relative h-[100dvh] snap-start snap-always">
-        <PhilosophyView onScrollToProduct={scrollToPhilosophy} />
+        <ProductView onScrollToPhilosophy={scrollToPhilosophy} />
       </section>
     </div>
   );
