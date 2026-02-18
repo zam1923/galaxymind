@@ -256,7 +256,7 @@ function ConnectionPanel({
           <p className="mb-6 text-[12px] leading-[2.2] text-gm-text-muted/50">
             その先にある9つの模索手段が、
             <br />
-            下の Showroom です。
+            上の Showroom です。
           </p>
 
           <button
@@ -268,10 +268,10 @@ function ConnectionPanel({
               height="14"
               viewBox="0 0 14 14"
               fill="none"
-              className="transition-transform duration-300 group-hover:translate-y-0.5"
+              className="transition-transform duration-300 group-hover:-translate-y-0.5"
             >
               <path
-                d="M7 2V10M7 10L3 6M7 10L11 6"
+                d="M7 12V4M7 4L3 8M7 4L11 8"
                 stroke="currentColor"
                 strokeWidth="1"
                 strokeLinecap="round"

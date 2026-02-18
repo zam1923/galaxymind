@@ -9,12 +9,12 @@ export default function Home() {
   const [introDone, setIntroDone] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const scrollToShowroom = () => {
+  const scrollToPhilosophy = () => {
     const vh = containerRef.current?.clientHeight ?? 0;
     containerRef.current?.scrollTo({ top: vh, behavior: "smooth" });
   };
 
-  const scrollToPhilosophy = () => {
+  const scrollToShowroom = () => {
     containerRef.current?.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -28,14 +28,14 @@ export default function Home() {
         <IntroAnimation onComplete={() => setIntroDone(true)} />
       )}
 
-      {/* 上層: Philosophy */}
-      <section className="h-[100dvh] snap-start snap-always">
-        <PhilosophyView onBackToShowroom={scrollToShowroom} />
-      </section>
-
-      {/* 下層: Showroom */}
+      {/* 上層: Showroom */}
       <section className="relative h-[100dvh] snap-start snap-always">
         <ShowroomView visible={introDone} onScrollToPhilosophy={scrollToPhilosophy} />
+      </section>
+
+      {/* 下層: Philosophy */}
+      <section className="h-[100dvh] snap-start snap-always">
+        <PhilosophyView onBackToShowroom={scrollToShowroom} />
       </section>
     </div>
   );

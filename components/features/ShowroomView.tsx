@@ -765,7 +765,7 @@ export function ShowroomView({ visible, onScrollToPhilosophy }: ShowroomViewProp
             &copy; 2026 GalaxyMind
           </p>
 
-          {/* 上スクロールヒント */}
+          {/* 下スクロールヒント */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: visible ? 1 : 0 }}
@@ -779,7 +779,7 @@ export function ShowroomView({ visible, onScrollToPhilosophy }: ShowroomViewProp
               viewBox="0 0 12 12"
               fill="none"
               className="text-gm-text-muted/20"
-              animate={{ y: [0, -3, 0] }}
+              animate={{ y: [0, 3, 0] }}
               transition={{
                 duration: 1.8,
                 repeat: Infinity,
@@ -787,7 +787,7 @@ export function ShowroomView({ visible, onScrollToPhilosophy }: ShowroomViewProp
               }}
             >
               <path
-                d="M2 8L6 4L10 8"
+                d="M2 4L6 8L10 4"
                 stroke="currentColor"
                 strokeWidth="1"
                 strokeLinecap="round"
