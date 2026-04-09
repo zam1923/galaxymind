@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 /* ---------- フェードインラッパー ---------- */
 function FadeInWhenVisible({
@@ -67,6 +68,16 @@ function HeroSection() {
     <section className="flex min-h-[60vh] flex-col items-center justify-center px-8 pt-20">
       <FadeInWhenVisible>
         <div className="text-center">
+          <div className="mb-6 flex justify-center">
+            <div className="relative h-48 w-48 border border-white/10">
+              <Image
+                src="/1761747666844.jpg"
+                alt="Toru Iwai"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
           <p className="mb-4 text-[10px] uppercase tracking-[0.5em] text-gm-text-muted/30">
             Portfolio
           </p>
@@ -263,7 +274,6 @@ function BackSection() {
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gm-bg">
-      {/* 背景装飾 */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -right-[10vw] top-[10vh] h-[40vh] w-[40vh] rounded-full bg-gm-indigo/[0.02] blur-[120px]" />
         <div className="absolute -left-[5vw] bottom-[20vh] h-[35vh] w-[35vh] rounded-full bg-gm-rose/[0.02] blur-[100px]" />
