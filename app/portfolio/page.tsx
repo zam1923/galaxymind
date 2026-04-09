@@ -91,9 +91,6 @@ function HeroSection() {
           <p className="text-[12px] leading-[2] text-gm-text-muted/60">
             {profile.affiliation}
           </p>
-          <p className="mt-1 text-[10px] text-gm-text-muted/30">
-            Student ID: {profile.studentId}
-          </p>
         </div>
       </FadeInWhenVisible>
     </section>
