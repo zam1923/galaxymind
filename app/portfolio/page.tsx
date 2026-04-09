@@ -5,7 +5,6 @@ import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-/* ---------- フェードインラッパー ---------- */
 function FadeInWhenVisible({
   children,
   delay = 0,
@@ -28,7 +27,6 @@ function FadeInWhenVisible({
   );
 }
 
-/* ---------- データ ---------- */
 const profile = {
   name: "Toru Iwai",
   nameJa: "岩井 亨",
@@ -62,44 +60,38 @@ const links = [
   { name: "GitHub", url: "https://github.com/zam1923", handle: "@zam1923" },
 ];
 
-/* ---------- セクション ---------- */
 function HeroSection() {
   return (
-    <section className="flex min-h-[60vh] flex-col items-center justify-center px-8 pt-20">
+    <section className="flex min-h-screen flex-col items-center justify-center px-8 pt-20 md:flex-row md:items-center md:gap-16 md:px-20">
       <FadeInWhenVisible>
-        <div className="text-center">
-          <div className="mb-6 flex justify-center">
-            <div className="relative h-48 w-48 border border-white/10">
-              <Image
-                src="/1761747666844.jpg"
-                alt="Toru Iwai"
-                fill
-                className="object-cover"
-              />
-            </div>
+        <div className="flex-shrink-0">
+          <div className="relative h-72 w-72 border border-white/10">
+            <Image
+              src="/1761747666844.jpg"
+              alt="Toru Iwai"
+              fill
+              className="object-cover"
+            />
           </div>
+        </div>
+      </FadeInWhenVisible>
+
+      <FadeInWhenVisible delay={0.2}>
+        <div className="mt-8 text-center md:mt-0 md:text-left">
           <p className="mb-4 text-[10px] uppercase tracking-[0.5em] text-gm-text-muted/30">
             Portfolio
           </p>
           <h1 className="mb-2 text-4xl font-bold tracking-tight text-gm-text/90 md:text-5xl">
             {profile.name}
           </h1>
-          <p className="mb-6 text-lg text-gm-text-muted/50">
+          <p className="mb-4 text-lg text-gm-text-muted/50">
             {profile.nameJa}
           </p>
-          <p className="text-[12px] tracking-widest text-gm-indigo/60">
+          <p className="mb-6 text-[12px] tracking-widest text-gm-indigo/60">
             {profile.role}
           </p>
-        </div>
-      </FadeInWhenVisible>
-
-      <FadeInWhenVisible delay={0.3}>
-        <div className="mx-auto my-12 h-px w-16 bg-gm-indigo/20" />
-      </FadeInWhenVisible>
-
-      <FadeInWhenVisible delay={0.5}>
-        <div className="max-w-md text-center">
-          <p className="text-[12px] leading-[2] text-gm-text-muted/60">
+          <div className="h-px w-16 bg-gm-indigo/20" />
+          <p className="mt-6 text-[12px] leading-[2] text-gm-text-muted/60">
             {profile.affiliation}
           </p>
         </div>
@@ -270,7 +262,6 @@ function BackSection() {
   );
 }
 
-/* ---------- メインページ ---------- */
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gm-bg">
