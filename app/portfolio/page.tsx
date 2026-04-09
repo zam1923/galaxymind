@@ -264,7 +264,7 @@ function BackSection() {
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen overflow-y-auto bg-gm-bg">
+    <main className="min-h-screen overflow-y-scroll bg-gm-bg">
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -right-[10vw] top-[10vh] h-[40vh] w-[40vh] rounded-full bg-gm-indigo/[0.02] blur-[120px]" />
         <div className="absolute -left-[5vw] bottom-[20vh] h-[35vh] w-[35vh] rounded-full bg-gm-rose/[0.02] blur-[100px]" />
